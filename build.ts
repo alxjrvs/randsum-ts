@@ -1,11 +1,17 @@
 import dts from 'bun-plugin-dts'
 
 const results = await Bun.build({
-  entrypoints: ['./src/index.ts'],
+  entrypoints: [
+    './src/dice/index.ts',
+    './src/tower/index.ts',
+    './src/notation/index.ts',
+    // './src/faces/index.ts',
+    './src/types.ts',
+    './src/patterns.ts'
+  ],
   outdir: './dist',
-  splitting: true,
-  sourcemap: 'inline',
-  plugins: [dts()]
+  splitting: true
+  // sourcemap: 'inline',
 })
 
 if (results.success == false) {
