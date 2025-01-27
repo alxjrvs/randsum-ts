@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
-    "outFile": "dist/types.d.ts",
-    "rootDir": "src"
-  }
+    "outDir": "dist/types.d.ts",
+  },
+  "exclude": [
+    "./build.ts"
+  ]
 }

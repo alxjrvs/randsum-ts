@@ -44,7 +44,8 @@
   "sideEffects": false,
   "scripts": {
     "analyze": "size-limit",
-    "build": "bun run clean && bun run build.ts",
+    "build": "bun run clean && bun run build.ts && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --project tsconfig.types.json",
     "clean": "rm -rf ./dist/",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -67,7 +68,6 @@
     "@types/eslint__js": "^8.42.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "bun-plugin-dts": "^0.3.0",
     "bun-types": "latest",
     "eslint": "^9.19.0",
     "prettier": "^3.4.2",
